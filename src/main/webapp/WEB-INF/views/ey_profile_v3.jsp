@@ -247,7 +247,7 @@
                           </div>
 
                           <div class="col-sm-2" style=" float:right; margin-bottom:2rem;">
-                           <a href="#" class="btn   btn-user btn-block" style="background-color:#2E64FE; color: white; width: 130px;"><i class="fas fa-check" style="margin-right:1rem;"></i> 기부내역 </a>
+                           <a href="http://localhost:8080/profile_edit" class="btn   btn-user btn-block" style="background-color:#2E64FE; color: white; width: 130px;"><i class="fas fa-check" style="margin-right:1rem;"></i>  수정</a>
 
 
 

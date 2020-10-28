@@ -10,21 +10,22 @@ package com.example.demo.controller;
 public class HomeController {
 
 
+    @RequestMapping("/profile")
+    public String viewProfilePage() {
+
+        return "ey_profile_v3";
+    }
     @RequestMapping("/index")
     public String viewIndexPage() {
 
-        return "index";
-    }
-    @RequestMapping("/tables")
-    public String viewTablesPage() {
-
-        return "tables";
+        return "joh_index";
     }
 
-    @RequestMapping("/charts")
-    public String viewchartsPage() {
 
-        return "charts";
+    @RequestMapping("/profile_edit")
+    public String viewProfileEditPage() {
+
+        return "joh_profile_edit_v2";
     }
     @RequestMapping("/enroll_com")
     public String viewenroll_comPage() {
