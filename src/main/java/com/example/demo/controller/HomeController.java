@@ -21,11 +21,20 @@ public class HomeController {
         return "joh_index";
     }
 
+    @RequestMapping("/donate_mylist")
+    public String viewDonateMylistPage() {
 
+        return "jy_donate_mylist_v3";
+    }
     @RequestMapping("/profile_edit")
     public String viewProfileEditPage() {
 
         return "joh_profile_edit_v2";
+    }
+    @RequestMapping("/request_mylist")
+    public String viewRequestMylistPage() {
+
+        return "jy_request_mylist_v5";
     }
     @RequestMapping("/enroll_com")
     public String viewenroll_comPage() {

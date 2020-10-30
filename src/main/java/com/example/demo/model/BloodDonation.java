@@ -7,8 +7,7 @@
         import lombok.NonNull;
         import lombok.Setter;
 
-        import javax.persistence.Entity;
-        import javax.persistence.Table;
+        import javax.persistence.*;
         import java.time.LocalTime;
 
 @Entity
@@ -17,68 +16,92 @@
 @Table(name="\"blood_donation\"")
 @Data
 public class BloodDonation {
+
     @NonNull
-    private String bd_id;
-    private String bdi_id;
-    private String bd_type;
-    private int bd_amount;
-    private LocalTime bd_date;
-    private String bd_institute;
-    private String user_id;
+    @Id
+    @Column(name = "bd_id")
+    private String bdId;
 
-    public String getBd_id() {
-        return bd_id;
+    @Column(name = "bdi_id")
+    private String bdiId;
+
+    @Column(name = "bd_type")
+    private String bdType;
+
+    @Column(name = "bd_amount")
+    private int bdAmount;
+
+    @Column(name = "bd_date")
+    private LocalTime bdDate;
+
+    @Column(name = "bd_institute")
+    private String bdInstitute;
+
+    @JoinColumn(name = "user_id")
+    @ManyToOne
+    private User user;
+
+    public String getBdId() {
+        return bdId;
     }
 
-    public void setBd_id(String bd_id) {
-        this.bd_id = bd_id;
+    public void setBdId(String bdId) {
+        this.bdId = bdId;
     }
 
-    public String getBdi_id() {
-        return bdi_id;
+    public String getBdiId() {
+        return bdiId;
     }
 
-    public void setBdi_id(String bdi_id) {
-        this.bdi_id = bdi_id;
+    public void setBdiId(String bdiId) {
+        this.bdiId = bdiId;
     }
 
-    public String getBd_type() {
-        return bd_type;
+    public String getBdType() {
+        return bdType;
     }
 
-    public void setBd_type(String bd_type) {
-        this.bd_type = bd_type;
+    public void setBdType(String bdType) {
+        this.bdType = bdType;
     }
 
-    public int getBd_amount() {
-        return bd_amount;
+    public int getBdAmount() {
+        return bdAmount;
     }
 
-    public void setBd_amount(int bd_amount) {
-        this.bd_amount = bd_amount;
+    public void setBdAmount(int bdAmount) {
+        this.bdAmount = bdAmount;
     }
 
-    public LocalTime getBd_date(){
-        return bd_date;
+    public LocalTime getBdDate() {
+        return bdDate;
     }
 
-    public void setBd_date(LocalTime bd_date){
-        this.bd_date=bd_date;
+    public void setBdDate(LocalTime bdDate) {
+        this.bdDate = bdDate;
     }
 
-    public String getBd_institute() {
-        return bd_institute;
+    public String getBdInstitute() {
+        return bdInstitute;
     }
 
-    public void setBd_institute(String bd_institute) {
-        this.bd_institute = bd_institute;
+    public void setBdInstitute(String bdInstitute) {
+        this.bdInstitute = bdInstitute;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
+
+    //    public String getUser_id() {
+//        return user_id;
+//    }
+//
+//    public void setUser_id(String user_id) {
+//        this.user_id = user_id;
+//    }
 }
