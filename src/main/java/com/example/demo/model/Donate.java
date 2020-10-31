@@ -1,13 +1,11 @@
 package com.example.demo.model;
 import javax.persistence.Column;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -15,6 +13,7 @@ import java.time.LocalTime;
 @Setter
 @Table(name="\"donate\"")
 @Data
+@NoArgsConstructor
 public class Donate {
     @NonNull
     @EmbeddedId
@@ -30,13 +29,13 @@ public class Donate {
 //    private User user;
 
     @Column (name = "donate_date")
-    private LocalTime donateDate;
+    private LocalDateTime donateDate;
 
     @Column(name = "donate_amount")
     private int donateAmount;
 
     @Column(name = "donate_cancel")
-    private LocalTime donateCancel;
+    private LocalDateTime donateCancel;
 
     public DonateId getDonateId() {
         return donateId;
@@ -46,11 +45,11 @@ public class Donate {
         this.donateId = donateId;
     }
 
-    public LocalTime getDonateDate() {
+    public LocalDateTime getDonateDate() {
         return donateDate;
     }
 
-    public void setDonateDate(LocalTime donateDate) {
+    public void setDonateDate(LocalDateTime donateDate) {
         this.donateDate = donateDate;
     }
 
@@ -62,11 +61,11 @@ public class Donate {
         this.donateAmount = donateAmount;
     }
 
-    public LocalTime getDonateCancel() {
+    public LocalDateTime getDonateCancel() {
         return donateCancel;
     }
 
-    public void setDonateCancel(LocalTime donateCancel) {
+    public void setDonateCancel(LocalDateTime donateCancel) {
         this.donateCancel = donateCancel;
     }
 }

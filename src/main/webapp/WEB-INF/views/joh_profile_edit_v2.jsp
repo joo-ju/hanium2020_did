@@ -292,14 +292,14 @@
                       </div>
                       <!-- <hr> -->
                       <div class="col-sm-2" style=" float:right; margin-bottom:1rem;">
-                        <a href="#" class="btn   btn-user btn-block" style="background-color:#1cc88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a>
+                        <a href="" class="btn   btn-user btn-block" style="background-color:#1cc88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a>
                         <!-- <button type="text" class=" btn form-control bg-gray-400 form-control-user"  style="border:1px solid red; text-align:center;" > <p style="border:1px solid red; text-align:center; vertical-align: middle;" >중복확인</p></button> -->
                       </div>
                       <div class="col-sm-2" style="float:left; margin-bottom:1rem;">
-                        <a href="#" class="btn   btn-user btn-block" style="background-color:red; color: white"><i class="fas fa-trash" style=""></i> 취소  </a>
+                        <a href="http://localhost:8080/profile" class="btn   btn-user btn-block" style="background-color:red; color: white"><i class="fas fa-trash" style=""></i> 취소  </a>
                         <!-- <button type="text" class=" btn form-control bg-gray-400 form-control-user"  style="border:1px solid red; text-align:center;" > <p style="border:1px solid red; text-align:center; vertical-align: middle;" >중복확인</p></button> -->
                       </div>
-                      <!-- <a href="#" class="btn   btn-user btn-block" style="background-color:red; 88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a> -->
+                      <!-- <a href="http://localhost:8080/profile" class="btn   btn-user btn-block" style="background-color:red; 88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a> -->
 
                       <!-- <div><a href="login.html" class="btn btn-primary btn-user btn-block">회원가입</a></div> -->
                     

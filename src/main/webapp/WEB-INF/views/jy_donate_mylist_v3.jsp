@@ -218,10 +218,10 @@
                                         <tr>
                                             <th>no</th>
                                             <th>기부날짜</th>
-                                            <th>헌혈증 번호</th>
-                                            <th>사용</th>
-                                            <th>사용날짜</th>
-                                            <th>사용처</th>
+                                            <th>기부량</th>
+                                            <th>요청</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -260,6 +260,23 @@
                                           <td></td>
                                           <td>아산병원</td>
                                         </tr>
+                                        <c:forEach items = "${donateA}" var="donate">
+                                            <tr>
+                                              <td nowrap></td>
+                                              <td nowrap></td>
+                                              <td nowrap>${donate.donateAmount}</td>
+                                              <td nowrap>${donate.donateId.reqId}</td>
+                                              <td nowrap>${donate.donateDate}</td>
+                                            </tr>
+                                         </c:forEach>
+                                         <tr>
+                                                                                   <td>4</td>
+                                                                                   <td>20.7.28</td>
+                                                                                   <td>01-01-123459</td>
+                                                                                   <td>x</td>
+                                                                                   <td></td>
+                                                                                   <td>아산병원</td>
+                                                                                 </tr>
                                     </tbody>
                                 </table>
                             </div>

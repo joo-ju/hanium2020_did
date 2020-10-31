@@ -15,17 +15,17 @@ public class HomeController {
 
         return "ey_profile_v3";
     }
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String viewIndexPage() {
 
         return "joh_index";
     }
 
-    @RequestMapping("/donate_mylist")
-    public String viewDonateMylistPage() {
-
-        return "jy_donate_mylist_v3";
-    }
+//    @RequestMapping("/donate_mylist")
+//    public String viewDonateMylistPage() {
+//
+//        return "jy_donate_mylist_v3";
+//    }
     @RequestMapping("/profile_edit")
     public String viewProfileEditPage() {
 
