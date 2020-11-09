@@ -233,7 +233,7 @@
                                             <td>20.2.9</td>
                                             <td>아산병원</td>
                                         </tr>
-                                         <c:forEach items = "${donateA}" var="donate">
+                                         <c:forEach var="donate"  items = "${donateA}"   varStatus="status">
                                             <tr>
                                               <td nowrap></td>
                                               <td nowrap></td>

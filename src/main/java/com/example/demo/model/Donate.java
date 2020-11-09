@@ -32,7 +32,7 @@ public class Donate {
     private LocalDateTime donateDate;
 
     @Column(name = "donate_amount")
-    private int donateAmount;
+    private Integer donateAmount;
 
     @Column(name = "donate_cancel")
     private LocalDateTime donateCancel;
@@ -53,11 +53,11 @@ public class Donate {
         this.donateDate = donateDate;
     }
 
-    public int getDonateAmount() {
+    public Integer getDonateAmount() {
         return donateAmount;
     }
 
-    public void setDonateAmount(int donateAmount) {
+    public void setDonateAmount(Integer donateAmount) {
         this.donateAmount = donateAmount;
     }
 
