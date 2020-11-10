@@ -41,7 +41,8 @@ public class UserController {
         String userId = "U00002";
         User user = userRepository.findByUserId(userId);
         user.setUserAddress(updateUserAddress);
-        userRepository.save(user);
+        userService.save(user);
+//        userRepository.save(user);
 //        userService.updateByUserId(userId, updateUserAddress);
 //        user.setUserAddress("updateUserAddress");
 //        uiModel.addAttribute("editProfile", user);
