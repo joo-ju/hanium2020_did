@@ -1,19 +1,18 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JacksonInject;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="\"user\"")
 @Data
-public abstract class User {
+public class User {
     @NonNull
     @Id
     @Column(name = "user_id")
@@ -47,17 +46,17 @@ public abstract class User {
     @JoinColumn(name = "g_id")
     private Group group;
 
-    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.userBirth = userBirth;
-        this.userGender = userGender;
-        this.userPhone = userPhone;
-        this.userAddress = userAddress;
-        this.userEmail = userEmail;
-        this.userInputdate = userInputdate;
-    }
+//    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate) {
+//        this.userId = userId;
+//        this.userName = userName;
+//        this.userPassword = userPassword;
+//        this.userBirth = userBirth;
+//        this.userGender = userGender;
+//        this.userPhone = userPhone;
+//        this.userAddress = userAddress;
+//        this.userEmail = userEmail;
+//        this.userInputdate = userInputdate;
+//    }
 
     public String getUserId() {
         return userId;
@@ -139,16 +138,20 @@ public abstract class User {
         this.group = group;
     }
 
-    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate, Group group) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.userBirth = userBirth;
-        this.userGender = userGender;
-        this.userPhone = userPhone;
+//    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate, Group group) {
+//        this.userId = userId;
+//        this.userName = userName;
+//        this.userPassword = userPassword;
+//        this.userBirth = userBirth;
+//        this.userGender = userGender;
+//        this.userPhone = userPhone;
+//        this.userAddress = userAddress;
+//        this.userEmail = userEmail;
+//        this.userInputdate = userInputdate;
+//        this.group = group;
+//    }
+
+    public User(String userAddress) {
         this.userAddress = userAddress;
-        this.userEmail = userEmail;
-        this.userInputdate = userInputdate;
-        this.group = group;
     }
 }
