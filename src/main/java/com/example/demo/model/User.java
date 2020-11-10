@@ -47,6 +47,18 @@ public abstract class User {
     @JoinColumn(name = "g_id")
     private Group group;
 
+    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userBirth = userBirth;
+        this.userGender = userGender;
+        this.userPhone = userPhone;
+        this.userAddress = userAddress;
+        this.userEmail = userEmail;
+        this.userInputdate = userInputdate;
+    }
+
     public String getUserId() {
         return userId;
     }
@@ -124,6 +136,19 @@ public abstract class User {
     }
 
     public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate, Group group) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userBirth = userBirth;
+        this.userGender = userGender;
+        this.userPhone = userPhone;
+        this.userAddress = userAddress;
+        this.userEmail = userEmail;
+        this.userInputdate = userInputdate;
         this.group = group;
     }
 }

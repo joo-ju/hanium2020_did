@@ -205,7 +205,7 @@
                       <h1 class="h3 text-gray-900 mb-4">회원정보수정</h1>
                     </div>
                     <hr>
-                    <form class="user">
+                    <form class="user" method="post" action="profile_edit_">
                       
 
                       
@@ -282,7 +282,7 @@
                       </div>
                       
                       <div class="form-group">
-                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="주소">
+                        <input name="updateUserAddress" type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="주소">
                       </div>
                       <div class="form-group">
                         <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="전화번호">
@@ -292,7 +292,8 @@
                       </div>
                       <!-- <hr> -->
                       <div class="col-sm-2" style=" float:right; margin-bottom:1rem;">
-                        <a href="#" class="btn   btn-user btn-block" style="background-color:#1cc88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a>
+                      <input type="submit" value="수정" class="btn   btn-user btn-block" style="background-color:#1cc88a; color: white"></input>
+                        <!-- <a href="http://localhost:8080/profile_edit_" type="submit" class="btn   btn-user btn-block" style="background-color:#1cc88a; color: white"><i class="fas fa-check" style=""></i>   수정  </a>-->
                         <!-- <button type="text" class=" btn form-control bg-gray-400 form-control-user"  style="border:1px solid red; text-align:center;" > <p style="border:1px solid red; text-align:center; vertical-align: middle;" >중복확인</p></button> -->
                       </div>
                       <div class="col-sm-2" style="float:left; margin-bottom:1rem;">

@@ -36,4 +36,9 @@ public class HomeController {
 
         return "enroll_res";
     }
+    @RequestMapping("/profile")
+    public String viewprofilePage() {
+
+        return "profile";
+    }
 }

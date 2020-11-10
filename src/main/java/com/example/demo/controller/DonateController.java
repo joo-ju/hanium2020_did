@@ -15,9 +15,6 @@ import java.util.List;
 @Controller
 public class DonateController {
     private DonateService donateService;
-
-
-
     private DonateRepository donateRepository;
 
     @RequestMapping("/donate_mylist")

@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 //@RepositoryDefinition(domainClass = Donate.class, idClass = String.class)
 public interface DonateRepository extends JpaRepository<Donate, String> {
-//    public List<Donate> findAll();
+    List<Donate> findAll();
 }
