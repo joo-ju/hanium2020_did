@@ -1,10 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JacksonInject;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,7 +10,9 @@ import javax.persistence.*;
 @Setter
 @Table(name="\"user\"")
 @Data
-public abstract class User {
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
     @NonNull
     @Id
     @Column(name = "user_id")

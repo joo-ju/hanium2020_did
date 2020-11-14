@@ -14,6 +14,7 @@ import java.time.LocalTime;
 @Table(name="\"donate\"")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Donate {
     @NonNull
     @EmbeddedId
