@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
-            </div> 
+            </div>
           </form> -->
 
           <!-- Topbar Navbar -->
@@ -92,20 +93,25 @@
               </a>
             </li>
 
-            <!-- Sign up, logout -->  
+            <!-- Sign up, logout -->
             <div style="width:100%; margin:auto; ">
               <li class="mb-1" style="height: 30%; margin-left: 1rem;  margin-right:1rem; width: 80%;  text-align: center; ">
-                <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->                
+                <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
                 <a href="#" class="d-none d-sm-inline-block  w-100  nav-link" style="padding: 0; background-color: #718FE9; color: white;"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-200"></i> Profile</a>
               </li>
               <li style="height: 20%; margin-left: 1rem;  width: 80%;    text-align: center; ">
                 <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
-                <a href="#" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Logout</a>
+                <c:if test="${empty userSession.userId}">
+                    <a href="/login" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Login</a>
+                </c:if>
+                <c:if test="${!empty userSession.userId}">
+                    <a href="/logout" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Logout</a>
+                </c:if>
               </li>
             </div>
 
             <div class="topbar-divider d-none d-sm-block"></div>
-            
+
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1" style="margin: auto;">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,7 +159,7 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-            </li>                
+            </li>
           </ul>
 
         </nav>
@@ -191,7 +197,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">메인 페이지</h1>
-           
+
           </div>
 
           <!-- Content Row -->

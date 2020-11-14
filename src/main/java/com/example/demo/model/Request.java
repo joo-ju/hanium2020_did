@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,12 +15,14 @@ import java.time.LocalTime;
 @Table(name="\"request\"")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Request {
     @NonNull
     @Id
     @Column(name = "req_id")
     private String reqId;
 
+    @CreationTimestamp
     @Column(name = "req_date")
     private LocalTime reqDate;
 
@@ -27,7 +30,7 @@ public class Request {
     private LocalTime reqDeadline;
 
     @Column(name = "req_amount")
-    private int reqAmount;
+    private Integer reqAmount;
 
     @Column(name = "req_reason")
     private String reqReason;
@@ -63,11 +66,11 @@ public class Request {
         this.reqDeadline = reqDeadline;
     }
 
-    public int getReqAmount() {
+    public Integer getReqAmount() {
         return reqAmount;
     }
 
-    public void setReqAmount(int reqAmount) {
+    public void setReqAmount(Integer reqAmount) {
         this.reqAmount = reqAmount;
     }
 

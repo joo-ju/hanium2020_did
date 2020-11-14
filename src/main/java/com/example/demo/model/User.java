@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JacksonInject;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 
@@ -12,6 +13,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name="\"user\"")
 @Data
+
+
 public class User {
     @NonNull
     @Id
@@ -46,17 +49,17 @@ public class User {
     @JoinColumn(name = "g_id")
     private Group group;
 
-//    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate) {
-//        this.userId = userId;
-//        this.userName = userName;
-//        this.userPassword = userPassword;
-//        this.userBirth = userBirth;
-//        this.userGender = userGender;
-//        this.userPhone = userPhone;
-//        this.userAddress = userAddress;
-//        this.userEmail = userEmail;
-//        this.userInputdate = userInputdate;
-//    }
+    public User(@NonNull String userId, String userName, String userPassword, int userBirth, int userGender, String userPhone, String userAddress, String userEmail, String userInputdate) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userBirth = userBirth;
+        this.userGender = userGender;
+        this.userPhone = userPhone;
+        this.userAddress = userAddress;
+        this.userEmail = userEmail;
+        this.userInputdate = userInputdate;
+    }
 
     public String getUserId() {
         return userId;

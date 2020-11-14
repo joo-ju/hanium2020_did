@@ -219,20 +219,20 @@
                           </div>
                         </select>
                         <p class="col-sm-6" style="margin:1px;font-size: 1rem;">회원 유형</p>
-                        <select class="dropdown form-control col-sm-6 mb-sm-0" style="margin-right:10px;" >
+                        <select name="userType" class="dropdown form-control col-sm-6 mb-sm-0" style="margin-right:10px;" >
                           <div class="dropdown-menu col-sm-6 animated--fade-in" style="">
-                            <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>                        
+                            <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>
                             <option class="dropdown-item" value="organization">기업</option>
                           </div>
                         </select>
                       </div> -->
-              
+
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                           <p class="col-sm-6" style="margin:1px;font-size: 1rem;">회원 유형</p>
                           <select class="dropdown form-control col-sm-12 mb-sm-0" style="margin-right:10px;" >
                             <div class="dropdown-menu col-sm-6 animated--fade-in" style="">
-                              <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>                        
+                              <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>
                               <option class="dropdown-item" value="organization">기업</option>
                             </div>
                           </select>
@@ -241,7 +241,7 @@
                           <p class="col-sm-6" style="margin:1px;font-size: 1rem;">성별</p>
                           <select class="dropdown form-control col-sm-12 mb-sm-0"  >
                             <div class="dropdown-menu col-sm-6 animated--fade-in" >
-                              <option class="dropdown-item" value="personal">여자</option>                        
+                              <option class="dropdown-item" value="personal">여자</option>
                               <option class="dropdown-item" value="organization">남자</option>
                             </div>
                           </select>
@@ -256,7 +256,7 @@
                           <a href="#" class="btn  bg-gray-400 btn-user btn-block"> 중복확인  </a>
                           <!-- <button type="text" class=" btn form-control bg-gray-400 form-control-user"  style="border:1px solid red; text-align:center;" > <p style="border:1px solid red; text-align:center; vertical-align: middle;" >중복확인</p></button> -->
                         </div>
-                      
+
                       </div>
 
                       <div class="form-group row">
@@ -267,7 +267,7 @@
                           <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="생년월일 *">
                         </div>
                       </div>
-                      
+
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                           <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="비밀번호 *">
@@ -276,7 +276,7 @@
                           <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="비밀번호 확인 *">
                         </div>
                       </div>
-                      
+
                       <div class="form-group">
                         <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="주소">
                       </div>
@@ -286,12 +286,12 @@
                       <div class="form-group">
                         <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="이메일 *">
                       </div>
-                      
+
 
                       <a href="login.html" class="btn btn-primary btn-user btn-block">
                         회원가입
                       </a>
-                     
+
                     </form>
                     <hr>
                     <div class="text-center">
@@ -305,7 +305,7 @@
               </div>
             </div>
           </div>
-       
+
         </div>
         <!-- /.container-fluid -->
 

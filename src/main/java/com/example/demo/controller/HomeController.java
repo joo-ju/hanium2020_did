@@ -31,14 +31,19 @@ public class HomeController {
 
         return "enroll_com";
     }
+    @RequestMapping("/profile_pre")
+    public String viewprofile_prePage() {
+
+        return "profile_pre";
+    }
     @RequestMapping("/enroll_res")
     public String viewenroll_resPage() {
 
         return "enroll_res";
     }
-    @RequestMapping("/profile")
-    public String viewprofilePage() {
-
-        return "profile";
-    }
+//    @RequestMapping("/profile")
+//    public String viewprofilePage() {
+//
+//        return "profile";
+//    }
 }

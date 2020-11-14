@@ -31,6 +31,10 @@ public class UserServicempl implements UserService {
         userRepository.save(user);
         return user;
     }
+    @Override
+    public User findByUserIdAndUserPassword(String userId, String password) {
+        return userRepository.findByUserIdAndUserPassword(userId, password);
+    }
 
 //    @Override
 //    public void updateByUserId(String userId, String userAddress){

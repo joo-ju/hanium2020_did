@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Donate;
 import com.example.demo.model.Request;
+import com.example.demo.model.User;
 import com.example.demo.repository.DonateRepository;
 import com.example.demo.repository.RequestRepository;
 import com.example.demo.service.DonateService;
@@ -11,14 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 @Controller
 public class DonateController {
+    @Autowired
     private DonateService donateService;
+    @Autowired
     private DonateRepository donateRepository;
     @Autowired
     private RequestService requestService;
@@ -26,36 +31,21 @@ public class DonateController {
     private RequestRepository requestRepository;
 
     @RequestMapping("/donate_mylist")
-    public String ListDonate(Model uiModel) {
+    public String ListDonate(Model uiModel, HttpServletRequest httpServlet) {
+        UserSession userSession = (UserSession) WebUtils.getSessionAttribute(httpServlet, "userSession");
+        String userId =userSession.getUser().getUserId();
+        User user = userSession.getUser();
 
-        List reqTitleList = new ArrayList();
-        List<Donate> donate = donateService.findAll();
-        uiModel.addAttribute("donateA", donate);
-        String reqId;
+        // user 정보에 따른 기부 내역
+        List<Donate> donate = donateRepository.findAllByUser(user);
+
+        // donate 테이블의 reqId 에 따른 요청글 찾아서 웹으로 전달
         Request request;
         for(Donate don : donate){
             request = don.getRequest();
-            List<Donate> donateB = donateService.findByRequest(request);
-            uiModel.addAttribute("donateB", donateB);
+            List<Donate> donateB = donateRepository.findByRequest(request);
+            uiModel.addAttribute("donateA", donateB);
         }
-
-//        String userId = "U00001";
-//        Request request ;
-//        String reqId;
-//        // 각각의 기부한 헌혈증의 요청아이디를 가져와서 요청 글 제목을 보여줌
-//        List<Request> requests = new ArrayList<>();
-//        List<Request> requests2 = new ArrayList<>();
-//        for(Donate don : donate){
-//            int i = 0;
-//            reqId = don.getDonateId().getReqId();
-////            reqIdList.add(reqId);
-//            requests = requestService.findOneByReqId(reqId);
-//            request = requests.get(0);
-//            i++;
-//            reqTitleList.add(request.getReqTitle());
-//
-//        }
-//        uiModel.addAttribute("reqTitleA", reqTitleList);
 
 
         return "donate_mylist";

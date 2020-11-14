@@ -8,4 +8,5 @@ public interface UserService {
 //    void updateByUserId(String no, String user);
      User findByUserId(String userId);
      User save(User user);
+     public User findByUserIdAndUserPassword(String userId, String password);
 }

@@ -2,6 +2,7 @@ package com.example.demo.model;
 import javax.persistence.Column;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -14,6 +15,8 @@ import java.time.LocalTime;
 @Table(name="\"donate\"")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+
 public class Donate {
 //    @NonNull
 //    @EmbeddedId
@@ -37,8 +40,9 @@ public class Donate {
     @Column(name = "donate_amount")
     private Integer donateAmount;
 
+
     @Column(name = "donate_cancel")
-    private LocalDateTime donateCancel;
+    private Integer donateCancel;
 
 //    public DonateId getDonateId() {
 //        return donateId;
@@ -81,11 +85,19 @@ public class Donate {
         this.donateAmount = donateAmount;
     }
 
-    public LocalDateTime getDonateCancel() {
+    public Integer getDonateCancel() {
         return donateCancel;
     }
 
-    public void setDonateCancel(LocalDateTime donateCancel) {
+    public void setDonateCancel(Integer donateCancel) {
         this.donateCancel = donateCancel;
+    }
+
+    public String getDonateId() {
+        return donateId;
+    }
+
+    public void setDonateId(String donateId) {
+        this.donateId = donateId;
     }
 }

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +19,9 @@
 
   <!-- Custom styles for this template-->
   <link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -106,6 +110,13 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
+
+
+
+
+
+
+
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1" style="margin: auto;">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -169,11 +180,11 @@
           </div> -->
           <div style="height: 90%;margin-left: 2rem;  width: 150%;  text-align: center; float: left;">
             <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
-             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;"><h4> Enroll</h4></a>
+             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn" style="color: white;"><h4> Enroll</h4></a>
           </div>
           <div style="height: 90%; margin-left: 2rem; width: 150%;  text-align: center; float: left;">
             <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
-             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;" ><h4> Donate</h4></a>
+             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn" style="color: white;" ><h4> Donate</h4></a>
           </div>
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <!-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> -->
@@ -188,81 +199,35 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="card col-lg-7 o-hidden border-0 shadow-lg my-5"style="margin:auto">
-                  <div class="card-body p-0" >
-                    <div class="row">
-                <!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
-                <div class="col-lg-12">
-                  <div class="p-5">
-                    <div class="text-center">
-                      <h3 class="h4 text-gray-900 mb-4">회원상세정보</h3>
-                    </div>
-                    <hr>
-                    <form class="user">
-
-
-                  <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <p class="col-sm-6" style="margin:1px;font-size: 1rem;">이름</p>
-                      <input disabled  value="${userInfo['userName']}" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="이름">
-                      </div>
-                    <div class="col-sm-6">
-                      <p class="col-sm-6" style="margin:1px;font-size: 1rem;">회원유형</p>
-                    <input disabled type="text" class="form-control form-control-user" id="exampleLastName" placeholder="개인">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <p class="col-sm-6" style="margin:1px;font-size: 1rem;">생년월일</p>
-                        <input disabled  value="${userInfo['userBirth']}" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="생년월일">
-                        </div>
-                      <div class="col-sm-6">
-                        <p class="col-sm-6" style="margin:1px;font-size: 1rem;">성별</p>
-                      <input disabled   type="text" class="form-control form-control-user" id="exampleLastName" placeholder="성별">
-                          </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <div class="col-sm-12 mb-3 mb-sm-0">
-                          <p class="col-sm-12" style="margin:1px;font-size: 1rem;">주소</p>
-                          <input disabled  value="${userInfo['userAddress']}"type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="주소">
-                          </div>
-
-                        </div>
-
-                        <div class="form-group row">
-                          <div class="col-sm-6 mb-3 mb-sm-0">
-                              <p class="col-sm-6" style="margin:1px;font-size: 1rem;">이메일</p>
-                            <input disabled  value="${userInfo['userEmail']}"type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="이메일">
-                            </div>
-                          <div class="col-sm-6">
-                              <p class="col-sm-6" style="margin:1px;font-size: 1rem;">전화번호</p>
-                          <input disabled  value="${userInfo['userPhone']}"type="text" class="form-control form-control-user" id="exampleLastName" placeholder="전화번호">
-                              </div>
-                          </div>
-
-                          <div class="col-sm-2" style=" float:right; margin-bottom:2rem;">
-                           <a href="http://localhost:8080/profile_edit" class="btn   btn-user btn-block" style="background-color:#2E64FE; color: white; width: 130px;"><i class="fas fa-checkㄴ" style="margin-right:1rem;"></i> 정보수정 </a>
-
-                          <div class="col-sm-2" style=" float:right; margin-bottom:2rem;">
-                           <a href="#" class="btn   btn-user btn-block" style="background-color:#2E64FE; color: white; width: 130px;"><i class="fas fa-check" style="margin-right:1rem;"></i> 기부내역 </a>
-
-
-
-
-
-
-
-
-          <!-- Content Row -->
-          <div class="row">
-          </div>
+        <div>
+            <a></a>
         </div>
-        <!-- /.container-fluid -->
 
-      </div>
+          <!-- Page Heading -->
+          <a href="http://localhost:8080/profile" class="card  o-hidden border-0 shadow-lg my-5" style="height: 100px; color:gray; width: 250px; margin:auto; text-align:center; text-decoration:none; vertical-align:middle;">
+                                           <div style="padding:0;margin:auto; ">
+                                             <h2>회원정보관리</h2>
+                                               <!-- Nested Row within Card Body -->
+
+                                           </div>
+                                         </a>
+         <a href="http://localhost:8080/request_mylist" class="card  o-hidden border-0 shadow-lg my-5" style="height: 100px; color:gray; width: 250px; margin:auto; text-align:center; text-decoration:none; vertical-align:middle;">
+                                          <div style="padding:0;margin:auto; ">
+                                            <h2>요청내역관리</h2>
+                                              <!-- Nested Row within Card Body -->
+
+                                          </div>
+                                        </a>
+                <a href="http://localhost:8080/donate_mylist" class="card  o-hidden border-0 shadow-lg my-5" style="height: 100px; color:gray; width: 250px; margin:auto; text-align:center; text-decoration:none; vertical-align:middle;">
+                                  <div style="padding:0;margin:auto; ">
+                                    <h2>기부내역관리</h2>
+                                      <!-- Nested Row within Card Body -->
+
+                                  </div>
+                                </a>
+
+
+
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -317,7 +282,7 @@
 
   <!-- Page level plugins -->
   <script src="${pageContext.request.contextPath}/resources/vendor/chart.js/Chart.min.js"></script>
-
+  <script src="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <!-- Page level custom scripts -->
   <script src="${pageContext.request.contextPath}/resources/js/demo/chart-area-demo.js"></script>
   <script src="${pageContext.request.contextPath}/resources/js/demo/chart-pie-demo.js"></script>

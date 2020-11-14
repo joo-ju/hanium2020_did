@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,7 +187,7 @@
                 <div class="col-lg-12">
                   <div class="p-5">
                     <div class="text-center">
-                      <h1 class="h3 text-gray-900 mb-4">내 기부내역</h1>
+                      <h1 class="h3 text-gray-900 mb-4">요청내역</h1>
                     </div>
                       <hr class="mt-4">
                         <!-- request list datatable -->
@@ -199,9 +200,18 @@
                                             <th>사유</th>
                                             <th>마감일</th>
                                             <th>필요증서 수량</th>
-                                            <th>기부된 수량</th>
+                                            <th>작성날짜</th>
                                         </tr>
-
+                                        <c:forEach var="requests"  items = "${requests}"   varStatus="status">
+                                            <tr>
+                                              <td nowrap>${status.count}</td>
+                                              <td nowrap>${requests.reqTitle}</td>
+                                              <td nowrap>${requests.reqReason}</td>
+                                              <td nowrap>${requests.reqDeadline}</td>
+                                              <td nowrap>${requests.reqAmount}</td>
+                                              <td nowrap>${requests.reqDate}</td>
+                                            </tr>
+                                         </c:forEach>
                                         <tr>
                                             <td>100</td>
                                             <td>백혈병을 앓고  <span class="badge badge-primary">완료</span></td>

@@ -249,7 +249,7 @@
 
                       <div class="form-group row">
                         <div class="col-sm-12 mb-3 mb-sm-0">
-                          <input disabled type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="아이디">
+                          <input disabled value="${userInfo['userId']}"type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="아이디">
                         </div>
                         <!-- <div class="col-sm-2" style="">
                           <a href="#" class="btn  bg-gray-400 btn-user btn-block"> 중복확인  </a>
@@ -260,35 +260,35 @@
 
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input disabled type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="이름">
+                          <input disabled value="${userInfo['userName']}" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="이름">
                         </div>
                         <div class="col-sm-6">
-                          <input disabled type="text" class="form-control form-control-user" id="exampleLastName" placeholder="생년월일">
+                          <input disabled value="${userInfo['userBirth']}"type="text" class="form-control form-control-user" id="exampleLastName" placeholder="생년월일">
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <div class="col-sm-12 mb-3 mb-sm-0">
-                          <input type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="기존 비밀번호">
+                          <input  name="updatePassword" type="password" class="form-control form-control-user" id="exampleFirstName" placeholder="기존 비밀번호">
                         </div>                   
                       </div>
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="새 비밀번호">
+                          <input name="updateNewPassword1" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="새 비밀번호">
                         </div>
                         <div class="col-sm-6">
-                          <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="새 비밀번호 확인">
+                          <input name="updateNewPassword2" type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="새 비밀번호 확인">
                         </div>
                       </div>
                       
                       <div class="form-group">
-                        <input name="updateUserAddress" type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="주소">
+                        <input value="${userInfo['userAddress']}"  name="updateUserAddress" type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="주소" >
                       </div>
                       <div class="form-group">
-                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="전화번호">
+                        <input value="${userInfo['userPhone']}" name="updateUserPhone" type="phone" class="form-control form-control-user" id="exampleInputEmail" placeholder="전화번호">
                       </div>
                       <div class="form-group">
-                        <input  type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="이메일">
+                        <input value="${userInfo['userEmail']}" name="updateUserEmail"  type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="이메일">
                       </div>
                       <!-- <hr> -->
                       <div class="col-sm-2" style=" float:right; margin-bottom:1rem;">

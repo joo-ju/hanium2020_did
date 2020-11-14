@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +59,7 @@
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
-            </div> 
+            </div>
           </form> -->
 
           <!-- Topbar Navbar -->
@@ -92,10 +93,10 @@
               </a>
             </li>
 
-            <!-- Sign up, logout -->  
+            <!-- Sign up, logout -->
             <div style="width:100%; margin:auto; ">
               <li class="mb-1" style="height: 30%; margin-left: 1rem;  margin-right:1rem; width: 80%;  text-align: center; ">
-                <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->                
+                <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
                 <a href="#" class="d-none d-sm-inline-block  w-100  nav-link" style="padding: 0; background-color: #718FE9; color: white;"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-200"></i> Profile</a>
               </li>
               <li style="height: 20%; margin-left: 1rem;  width: 80%;    text-align: center; ">
@@ -105,7 +106,7 @@
             </div>
 
             <div class="topbar-divider d-none d-sm-block"></div>
-            
+
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1" style="margin: auto;">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,7 +154,7 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-            </li>                
+            </li>
           </ul>
 
         </nav>
@@ -191,7 +192,7 @@
           <!-- Page Heading -->
           <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">로그인</h1>
-           
+
           </div> -->
 
           <!-- Content Row -->
@@ -206,9 +207,9 @@
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
-    
+
           <div class="col-xl-10 col-lg-6 col-md-9">
-    
+
             <div class="card o-hidden border-0 shadow-lg my-5">
               <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -222,10 +223,10 @@
                       <hr>
                       <form class="user">
                         <div class="form-group">
-                          <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                          <input type="text" name="userId" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email ID...">
                         </div>
                         <div class="form-group">
-                          <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                          <input type="password" name ="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
                         <div class="form-group">
                           <div class="custom-control custom-checkbox small">
@@ -233,9 +234,10 @@
                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                           </div>
                         </div>
-                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                        <!-- a href="index.html" class="btn btn-primary btn-user btn-block">
                           Login
-                        </a>
+                        </a -->
+                        <input type="submit" value="login">
                         <hr>
                         <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                           <i class="fab fa-google fa-fw"></i> Login with Google
@@ -244,23 +246,23 @@
                           <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                         </a> -->
                       </form>
-                      
+
                       <div class="text-center">
                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                       </div>
                       <div class="text-center">
-                        <a class="small" href="register.html">Create an Account!</a>
+                        <a class="small" href="/register">Create an Account!</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-    
+
           </div>
-    
+
         </div>
-    
+
       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -279,7 +281,7 @@
   <!-- End of Page Wrapper -->
 
 
-  
+
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
