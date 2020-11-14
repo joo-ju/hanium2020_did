@@ -218,58 +218,24 @@
                                     <thead>
                                         <tr>
                                             <th>no</th>
-                                            <th>기부날짜</th>
-                                            <th>헌혈증 번호</th>
-                                            <th>사용량</th>
-                                            <th>사용날짜</th>
-                                            <th>사용처</th>
+                                            <th>요청글</th>
+                                            <th>기부 날짜</th>
+                                            <th>기부량</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>20.2.1</td>
-                                            <td>01-01-123456</td>
-                                            <td>o</td>   <!-- 사용시 소문자 o, 미사용시 소문자 x -->
-                                            <td>20.2.9</td>
-                                            <td>아산병원</td>
-                                        </tr>
                                          <c:forEach var="donate"  items = "${donateA}"   varStatus="status">
                                             <tr>
-                                              <td nowrap></td>
-                                              <td nowrap></td>
+                                              <td nowrap>${status.count}</td>
+                                              <td nowrap>${donate.request.reqTitle}</td>
                                               <td nowrap>${donate.donateDate}</td>
                                               <td nowrap>${donate.donateAmount}</td>
-                                              <td nowrap>${donate.donateId.reqId}</td>
-                                              <td nowrap>${donate.donateDate}</td>
                                             </tr>
                                          </c:forEach>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>20.2.2</td>
-                                            <td>01-01-123457</td>
-                                            <td>o</td>
-                                            <td>20.2.4</td>
-                                            <td>세브란스병원</td>
-                                        </tr>
 
-                                        <tr>
-                                          <td>3</td>
-                                          <td>20.7.1</td>
-                                          <td>01-01-123458</td>
-                                          <td>o</td>
-                                          <td>20.7.15</td>
-                                          <td>세브란스병원</td>
-                                        </tr>
 
-                                        <tr>
-                                          <td>4</td>
-                                          <td>20.7.28</td>
-                                          <td>01-01-123459</td>
-                                          <td>x</td>
-                                          <td></td>
-                                          <td>아산병원</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 
+import com.example.demo.model.Request;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,11 @@ public class DonateServicempl implements DonateService  {
         //   List list = newArrayList(test2Repository.findAll());
         return Lists.newArrayList(donateRepository.findAll());
     }
+    @Override
+    public List<Donate> findByRequest(Request request){
+        return Lists.newArrayList(donateRepository.findByRequest(request));
 
+    }
     @Autowired
     public void setDonateRepository(DonateRepository donateRepository){
         this.donateRepository = donateRepository;

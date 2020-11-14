@@ -15,18 +15,21 @@ import java.time.LocalTime;
 @Data
 @NoArgsConstructor
 public class Donate {
-    @NonNull
-    @EmbeddedId
-    private DonateId donateId;
+//    @NonNull
+//    @EmbeddedId
+//    private DonateId donateId;
 //    @Id
-//    @OneToOne
-//    @JoinColumn(name = "request_id")
-//    private Request request;
-//
-//    @Id
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    private User user;
+    @OneToOne
+    @JoinColumn(name = "req_id")
+    private Request request;
+
+    @Id
+    @Column(name = "donate_id")
+    private String donateId;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column (name = "donate_date")
     private LocalDateTime donateDate;
@@ -37,12 +40,29 @@ public class Donate {
     @Column(name = "donate_cancel")
     private LocalDateTime donateCancel;
 
-    public DonateId getDonateId() {
-        return donateId;
+//    public DonateId getDonateId() {
+//        return donateId;
+//    }
+//
+//    public void setDonateId(DonateId donateId) {
+//        this.donateId = donateId;
+//    }
+
+
+    public Request getRequest() {
+        return request;
     }
 
-    public void setDonateId(DonateId donateId) {
-        this.donateId = donateId;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setRequest(Request request) {
+        this.request = request;
     }
 
     public LocalDateTime getDonateDate() {
