@@ -36,6 +36,7 @@ public class UserController {
     @RequestMapping("/login")
     public String handleRequest(HttpServletRequest request,
                                       @ModelAttribute("CurrentLogin") CurrentLogin loginData, Model model ) {
+        System.out.println(loginData.getUserId() + "//" + loginData.getPassword());
         User user = userService.findByUserIdAndUserPassword(loginData.getUserId(), loginData.getPassword());
         if (user == null)
             return "/login";
@@ -47,28 +48,12 @@ public class UserController {
            return "/login";
     }
 
-    @RequestMapping("/loginout")
+    @RequestMapping("/logout")
     public String logout(HttpSession session, SessionStatus sessionStatus){
         session.removeAttribute("userSession");
         sessionStatus.setComplete();
         return "/index";
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String showForm() {
-        return "/sign_up";
-    }
 
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String onSubmit(
-//            HttpServletRequest request, HttpSession session,
-//            @ModelAttribute("user") AccountForm accountForm,
-//            BindingResult result) throws Exception {
-//
-//        UserSession userSession = new UserSession(
-//                us.getUser(accountForm.getAccount().getUsername()));
-//
-//        session.setAttribute("userSession", userSession);
-//        return successViewName;
-//    }
 }

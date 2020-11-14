@@ -15,35 +15,35 @@ import javax.persistence.*;
 public class User {
     @NonNull
     @Id
-    @Column(name = "user_id")
+    @Column(name = "user_id") // 아이
     private String userId;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name") //이
     private String userName;
 
-    @Column(name = "user_password")
+    @Column(name = "user_password") // 비
     private String userPassword;
 
-    @Column(name = "user_birth")
+    @Column(name = "user_birth") // 생년월일
     private int userBirth;
 
-    @Column(name = "user_gender")
+    @Column(name = "user_gender") // 성별
     private int userGender;
 
-    @Column(name = "user_phone")
+    @Column(name = "user_phone")// 전번
     private String userPhone;
 
-    @Column(name = "user_address")
+    @Column(name = "user_address")//주소
     private String userAddress;
 
-    @Column(name = "user_email")
+    @Column(name = "user_email")//이메일
     private String userEmail;
 
     @Column(name = "user_inputdate")
     private String userInputdate;
 
     @ManyToOne
-    @JoinColumn(name = "g_id")
+    @JoinColumn(name = "g_id")//회원유형
     private Group group;
 
     public String getUserId() {
@@ -125,4 +125,6 @@ public class User {
     public void setGroup(Group group) {
         this.group = group;
     }
+
+
 }

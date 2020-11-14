@@ -101,12 +101,12 @@
               </li>
               <li style="height: 20%; margin-left: 1rem;  width: 80%;    text-align: center; ">
                 <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
-                <c:if test="${empty userSession.userId}">
+                <!-- c:if test="${empty userSession.userId}"-->
                     <a href="/login" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Login</a>
-                </c:if>
-                <c:if test="${!empty userSession.userId}">
+
+                <!-- c:if test="${!empty userSession.userId}" -->
                     <a href="/logout" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Logout</a>
-                </c:if>
+
               </li>
             </div>
 
