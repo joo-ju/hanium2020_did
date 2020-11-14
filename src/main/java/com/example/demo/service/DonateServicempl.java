@@ -19,6 +19,9 @@ import java.util.List;
 @Transactional
 @Service("DonateService")
 public class DonateServicempl implements DonateService  {
+    @Autowired
+    private DonateService donateService;
+    @Autowired
     private DonateRepository donateRepository;
 
     @Override

@@ -18,4 +18,20 @@ public class DonateId implements Serializable {
 
     @Column(name = "user_id")
     private String userId;
+
+    public String getReqId() {
+        return reqId;
+    }
+
+    public void setReqId(String reqId) {
+        this.reqId = reqId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

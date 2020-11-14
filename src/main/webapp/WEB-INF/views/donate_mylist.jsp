@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,13 +214,13 @@
                         <!-- donate list datatable -->
                         <div class="table-responsive">
 
-                          <table class="table" id="datatable" width="100%" cellspacing="0">
+                          <table class="table table-hover" id="datatable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>no</th>
                                             <th>기부날짜</th>
                                             <th>헌혈증 번호</th>
-                                            <th>사용</th>
+                                            <th>사용량</th>
                                             <th>사용날짜</th>
                                             <th>사용처</th>
                                         </tr>
@@ -237,6 +238,7 @@
                                             <tr>
                                               <td nowrap></td>
                                               <td nowrap></td>
+                                              <td nowrap>${donate.donateDate}</td>
                                               <td nowrap>${donate.donateAmount}</td>
                                               <td nowrap>${donate.donateId.reqId}</td>
                                               <td nowrap>${donate.donateDate}</td>

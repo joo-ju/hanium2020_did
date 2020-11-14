@@ -1,4 +1,13 @@
 package com.example.demo.repository;
 
-public interface RequestRepository {
+import com.example.demo.model.Donate;
+import com.example.demo.model.Request;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface RequestRepository extends JpaRepository<Request, String> {
+     public List<Request> findOneByReqId(String reqId);
 }
