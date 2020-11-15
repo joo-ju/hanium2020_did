@@ -35,7 +35,7 @@ public class UserController {
 
     @RequestMapping("/login")
     public String handleRequest(HttpServletRequest request,
-                                      @ModelAttribute("CurrentLogin") CurrentLogin loginData, Model model ) {
+                                      @ModelAttribute("currentLogin") CurrentLogin loginData, Model model ) {
         System.out.println(loginData.getUserId() + "//" + loginData.getPassword());
         User user = userService.findByUserIdAndUserPassword(loginData.getUserId(), loginData.getPassword());
         if (user == null)

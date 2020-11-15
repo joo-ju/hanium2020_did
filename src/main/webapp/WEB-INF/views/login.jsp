@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,12 +222,13 @@
                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                       </div>
                       <hr>
-                      <form class="user">
+                      <form:form modelAttribute="currentLogin" action="/login" class="user"  method="post">
+
                         <div class="form-group">
-                          <input type="text" name="userId" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email ID...">
+                          <form:input path="userId" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email ID..."/>
                         </div>
                         <div class="form-group">
-                          <input type="password" name ="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                          <form:password path="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"/>
                         </div>
                         <div class="form-group">
                           <div class="custom-control custom-checkbox small">
@@ -233,9 +236,6 @@
                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                           </div>
                         </div>
-                        <!-- a href="index.html" class="btn btn-primary btn-user btn-block">
-                          Login
-                        </a -->
                         <input type="submit" value="login">
                         <hr>
                         <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -244,7 +244,7 @@
                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
                           <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                         </a> -->
-                      </form>
+                      </form:form>
                       
                       <div class="text-center">
                         <a class="small" href="forgot-password.html">Forgot Password?</a>
