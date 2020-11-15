@@ -1,6 +1,10 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Group;
+import com.example.demo.model.GroupDetail;
 import com.example.demo.model.User;
+import com.example.demo.repository.GroupDetailRepository;
+import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.UserRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,12 @@ public class UserServicempl implements UserService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    GroupRepository groupRepository;
+
+    @Autowired
+    GroupDetailRepository groupDetailRepository;
+
     @Override
     public User findByUserIdAndUserPassword(String userId, String password) {
         return userRepository.findByUserIdAndUserPassword(userId, password);
@@ -28,4 +38,13 @@ public class UserServicempl implements UserService {
 
     @Override
     public void save(User user){userRepository.save(user); }
+
+    @Override
+    public GroupDetail findBygcId(String groupId){return groupDetailRepository.findBygcId(groupId); }
+
+    @Override
+    public void save(Group group){groupRepository.save(group); }
+
+    @Override
+    public void save(GroupDetail gd){groupDetailRepository.save(gd); }
 }

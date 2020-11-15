@@ -17,6 +17,7 @@ import javax.persistence.Table;
 public class GroupDetail {
     @NonNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "gc_id")
     private String gcId;
 

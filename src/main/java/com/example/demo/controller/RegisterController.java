@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Group;
+import com.example.demo.model.GroupDetail;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +55,28 @@ public class RegisterController {
                 user.setUserPhone(accountForm.getPhone());
                 user.setUserAddress(accountForm.getAddress());
                 user.setUserEmail(accountForm.getEmail());
-                //
+                // save new Group
+                if (accountForm.getGroup().equals("o")) {
+                    Group group = new Group();
+                    group.setgId("o");
+                    group.setgName("기관");
+//                    userService.save(group);
+                    if (userService.findBygcId(accountForm.getUserId()) != null) // groupDetail 리스트에 해당 group이 있다면
+                        return "/sign_up";
+                    else { // 없다면
+                        GroupDetail groupDetail = new GroupDetail();
+                        groupDetail.setGroup(group);
+                        groupDetail.setGcName(accountForm.getUserId());
+                        userService.save(groupDetail);
+                        user.setGroup(group);
+                    }
+                } else {
+                    Group group = new Group();
+                    group.setgId("x");
+                    group.setgName("개인");
+//                    userService.save(group);
+                    user.setGroup(group);
+                }
                 userService.save(user);
                 return "/index";
             }

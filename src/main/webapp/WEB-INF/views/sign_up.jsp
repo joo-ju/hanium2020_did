@@ -214,8 +214,8 @@
                           <p class="col-sm-6" style="margin:1px;font-size: 1rem;">회원 유형</p>
                           <form:select path="group" class="dropdown form-control col-sm-12 mb-sm-0" style="margin-right:10px;" >
                             <div class="dropdown-menu col-sm-6 animated--fade-in" style="">
-                              <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>
-                              <option class="dropdown-item" value="organization">기업</option>
+                              <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;" value="x">개인</option>
+                              <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;" value="o">기업</option>
                             </div>
                           </form:select>
                         </div>
