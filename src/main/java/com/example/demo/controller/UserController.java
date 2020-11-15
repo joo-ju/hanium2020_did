@@ -43,7 +43,7 @@ public class UserController {
         if (loginData.getPassword().equals(user.getUserPassword())) {
             UserSession userSession = new UserSession(user, loginData().getUserId());
             model.addAttribute("userSession", userSession);
-            return "/index";
+            return "redirect:/index";
         } else
            return "/login";
     }
@@ -52,7 +52,7 @@ public class UserController {
     public String logout(HttpSession session, SessionStatus sessionStatus){
         session.removeAttribute("userSession");
         sessionStatus.setComplete();
-        return "/index";
+        return "redirect:/index";
     }
 
 

@@ -4,21 +4,23 @@ package com.example.demo.controller;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Controller;
         import org.springframework.web.bind.annotation.RequestMapping;
+        import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Slf4j
 @Controller
+@SessionAttributes("userSession")
 public class HomeController {
 
     @RequestMapping("/")
     public String viewIndexPage1() {
 
-        return "index";
+        return "/index";
     }
 
     @RequestMapping("/index")
     public String viewIndexPage() {
 
-        return "index";
+        return "/index";
     }
     @RequestMapping("/tables")
     public String viewTablesPage() {
