@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DID_헌혈팀</title>
+  <title>전자 헌혈증 관리 서비스</title>
 
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,41 +65,18 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow h-100 " style="margin: auto;">
-              <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-200 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-            </li>
-
-            <!-- Sign up, logout -->  
+            <!-- profile, Sign up, logout -->
             <div style="width:100%; margin:auto; ">
               <li class="mb-1" style="height: 30%; margin-left: 1rem;  margin-right:1rem; width: 80%;  text-align: center; ">
-                <a href="http://localhost:8080/profile" class="d-none d-sm-inline-block  w-100  nav-link" style="padding: 0; background-color: #718FE9; color: white;"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-200"></i> Profile</a>
+                <a href="/profile_pre" class="d-none d-sm-inline-block  w-100  nav-link" style="padding: 0; background-color: #718FE9; color: white;"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-200"></i> Profile</a>
               </li>
               <li style="height: 20%; margin-left: 1rem;  width: 80%;    text-align: center; ">
-                <a href="#" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Logout</a>
+                <c:if test="${empty userSession.userId}">
+                    <a href="/login" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Login</a>
+                </c:if>
+                <c:if test="${!empty userSession.userId}">
+                    <a href="/logout" class="d-none d-sm-inline-block  w-100 nav-link " style="padding: 0; background-color: #718FE9; color: white;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-200"></i> Logout</a>
+                </c:if>
               </li>
             </div>
 
@@ -166,12 +144,16 @@
             <h4 class=" mb-0 text-gray-200">  Enroll</h4>
           </div> -->
           <div style="height: 90%;margin-left: 2rem;  width: 150%;  text-align: center; float: left;">
-             <a href="http://localhost:8080/my_blood_list" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;"><h4> Enroll</h4></a>
+            <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
+             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;"><h4> Enroll</h4></a>
           </div>
           <div style="height: 90%; margin-left: 2rem; width: 150%;  text-align: center; float: left;">
-             <a href="http://localhost:8080/request_list" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;" ><h4> Donate</h4></a>
+            <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
+             <a href="/request_list" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;" ><h4> Donate</h4></a>
           </div>
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <!-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> -->
+            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> Generate Report</a> -->
           </div>
           <div style="margin-right: 2rem; margin-left: 2rem; width: 150%; text-align: center; float: left;">
             <h4 class=" mb-0 text-gray-200">  </h4>
@@ -179,15 +161,13 @@
         </div>
         <!-- End of Topbar2 -->
 
-
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4" var="request" items="${requestList}">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">메인 페이지</h1>
-
+           
           </div>
 
           <!-- Content Row -->
@@ -233,7 +213,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.jsp">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>

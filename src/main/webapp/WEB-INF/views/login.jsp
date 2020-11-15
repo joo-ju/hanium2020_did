@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>DID_헌혈팀</title>
+  <title>전자 헌혈증 관리 서비스</title>
 
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,34 +63,6 @@
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow h-100 " style="margin: auto;">
-              <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-200 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-            </li>
 
             <!-- Sign up, logout -->  
             <div style="width:100%; margin:auto; ">
@@ -173,7 +145,7 @@
           </div>
           <div style="height: 90%; margin-left: 2rem; width: 150%;  text-align: center; float: left;">
             <!-- <h4 class=" mb-0 text-gray-200" >  Donate</h4> -->
-             <a href="#" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;" ><h4> Donate</h4></a>
+             <a href="/request_list" class="d-none d-sm-inline-block h-100 w-100 btn " style="color:white;" ><h4> Donate</h4></a>
           </div>
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <!-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> -->
@@ -222,10 +194,10 @@
                       <hr>
                       <form class="user">
                         <div class="form-group">
-                          <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                          <input type="text" name="userId" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email ID...">
                         </div>
                         <div class="form-group">
-                          <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                          <input type="password" name ="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
                         <div class="form-group">
                           <div class="custom-control custom-checkbox small">
@@ -233,9 +205,10 @@
                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                           </div>
                         </div>
-                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                        <!-- a href="index.html" class="btn btn-primary btn-user btn-block">
                           Login
-                        </a>
+                        </a -->
+                        <input type="submit" value="login">
                         <hr>
                         <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
                           <i class="fab fa-google fa-fw"></i> Login with Google
@@ -249,7 +222,7 @@
                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                       </div>
                       <div class="text-center">
-                        <a class="small" href="register.html">Create an Account!</a>
+                        <a class="small" href="/register">Create an Account!</a>
                       </div>
                     </div>
                   </div>
