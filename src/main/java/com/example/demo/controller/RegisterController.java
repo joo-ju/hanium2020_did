@@ -4,6 +4,7 @@ import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/sign_up")
 public class RegisterController {
 
     @Autowired
@@ -40,23 +42,22 @@ public class RegisterController {
             BindingResult result) throws Exception {
             if (userService.findByUserId(accountForm.getUserId()) != null)
                 return "/sign_up";
-            else {
-//                System.out.println("/////////////////////////////"+ userService.findByUserId(accountForm.getUserId()).getUserId());
-                if (accountForm.getPassword().equals(accountForm.getCheckPassword())) {
-                    User user = new User();
-                    user.setUserId(accountForm.getUserId());
-                    user.setUserName(accountForm.getName());
-                    user.setUserPassword(accountForm.getPassword());
-                    user.setUserBirth(accountForm.getBirth());
-                    user.setUserGender(accountForm.getGender());
-                    user.setUserPhone(accountForm.getPhone());
-                    user.setUserAddress(accountForm.getAddress());
-                    user.setUserEmail(accountForm.getEmail());
-                    // group 뺘고 다 넣음
-                    userService.save(user);
-                    return "/index";
-                } else
-                    return "/sign_up";
+            System.out.println(accountForm.getUserId());
+            if (accountForm.getPassword().equals(accountForm.getCheckPassword())) {
+                User user = new User();
+                user.setUserId(accountForm.getUserId());
+                user.setUserName(accountForm.getName());
+                user.setUserPassword(accountForm.getPassword());
+                user.setUserBirth(accountForm.getBirth());
+                user.setUserGender(accountForm.getGender());
+                user.setUserPhone(accountForm.getPhone());
+                user.setUserAddress(accountForm.getAddress());
+                user.setUserEmail(accountForm.getEmail());
+                //
+                userService.save(user);
+                return "/index";
             }
+            else
+                return "/sign_up";
     }
 }

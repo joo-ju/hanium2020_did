@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +73,7 @@
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
+                <formclass="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -206,60 +208,63 @@
                       <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
                     </div>
                     <hr>
-                    <form class="user" action="/sign_up" method="post">
+                    <form:form modelAttribute="accountForm" action="/sign_up" class="user"  method="post">
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                           <p class="col-sm-6" style="margin:1px;font-size: 1rem;">회원 유형</p>
-                          <select id="group" class="dropdown form-control col-sm-12 mb-sm-0" style="margin-right:10px;" >
+                          <form:select path="group" class="dropdown form-control col-sm-12 mb-sm-0" style="margin-right:10px;" >
                             <div class="dropdown-menu col-sm-6 animated--fade-in" style="">
                               <option class="dropdown-item" style=" padding: 0.25rem 1.5rem;"value="personal">개인</option>
                               <option class="dropdown-item" value="organization">기업</option>
                             </div>
-                          </select>
+                          </form:select>
                         </div>
                         <div class="col-sm-6">
                           <p class="col-sm-6" style="margin:1px;font-size: 1rem;">성별</p>
-                          <select id="gender" class="dropdown form-control col-sm-12 mb-sm-0"  >
+                          <form:select path="gender" class="dropdown form-control col-sm-12 mb-sm-0"  >
                             <div class="dropdown-menu col-sm-6 animated--fade-in" >
-                              <option class="dropdown-item" value="personal">여자</option>
-                              <option class="dropdown-item" value="organization">남자</option>
+                              <option class="dropdown-item" value="1">여자</option>
+                              <option class="dropdown-item" value="2">남자</option>
                             </div>
-                          </select>
+                          </form:select>
                         </div>
                       </div>
                       <div class="form-group row">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                         <form:input class="form-control form-control-user" path="userId" placeholder="아이디 *"/>
+                       </div>
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="text" class="form-control form-control-user" id="name" placeholder="이름 *">
+                          <form:input class="form-control form-control-user" path="name" placeholder="이름 *"/>
                         </div>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control form-control-user" id="birth" placeholder="생년월일 *">
+                          <form:input class="form-control form-control-user" path="birth" placeholder="생년월일 *"/>
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="password" class="form-control form-control-user" id="password" placeholder="비밀번호 *">
+                          <form:password class="form-control form-control-user" path="password" placeholder="비밀번호 *"/>
                         </div>
                         <div class="col-sm-6">
-                          <input type="password" class="form-control form-control-user" id="checkPassword" placeholder="비밀번호 확인 *">
+                          <form:password class="form-control form-control-user" path="checkPassword" placeholder="비밀번호 확인 *"/>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="address" placeholder="주소">
+                        <form:input class="form-control form-control-user" path="address" placeholder="주소"/>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="phone" placeholder="전화번호">
+                        <form:input class="form-control form-control-user" path="phone" placeholder="전화번호"/>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="email" placeholder="이메일 *">
+                        <form:input class="form-control form-control-user" path="email" placeholder="이메일 *"/>
                       </div>
 
 
 
                       <input type="submit" value="회원가입" class="btn btn-primary btn-user btn-block">
 
-                    </form>
+                    </form:form>
                     <hr>
                     <div class="text-center">
                       <a class="small" href="forgot-password.html">Forgot Password?</a>
