@@ -63,7 +63,7 @@ public class RegisterController {
 //                    userService.save(group);
                     if (userService.findBygcId(accountForm.getUserId()) != null) // groupDetail 리스트에 해당 group이 있다면
                         return "/sign_up";
-                    else { // 없다면
+                    else { // 없다면 hi
                         GroupDetail groupDetail = new GroupDetail();
                         groupDetail.setGroup(group);
                         groupDetail.setGcName(accountForm.getUserId());
