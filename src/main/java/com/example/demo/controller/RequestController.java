@@ -29,10 +29,10 @@ public class RequestController {
 
     @RequestMapping("/request_mylist")
     public String viewRequestMylistPage(Model uiModel,  HttpServletRequest httpServlet) {
-        UserSession userSession = (UserSession) WebUtils.getSessionAttribute(httpServlet, "userSession");
-        String userId =userSession.getUser().getUserId();
+//        UserSession userSession = (UserSession) WebUtils.getSessionAttribute(httpServlet, "userSession");
+//        String userId =userSession.getUser().getUserId();
 
-//        userId = "U00001";
+       String userId = "U00001";
         //user 정보에 따른 요청내역
         User user = userRepository.findByUserId(userId);
 

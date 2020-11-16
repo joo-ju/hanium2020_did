@@ -50,7 +50,12 @@ public class DonateController {
 
         return "donate_mylist";
     }
+    @RequestMapping("/donate_enroll")
+    public String EnrollDonate(Model uiModel, HttpServletRequest httpServlet) {
 
+
+        return "donate_enroll";
+    }
     @Autowired
     public void setDonateService(DonateService donateService){ this.donateService = donateService;}
     @Autowired

@@ -38,9 +38,9 @@ public class UserController {
     @RequestMapping("/profile")
     public String viewProfilePage(Model uiModel, HttpServletRequest httpServlet) {
         UserSession userSession = (UserSession) WebUtils.getSessionAttribute(httpServlet, "userSession");
-//        String userId =userSession.getUser().getUserId();
+        String userId =userSession.getUser().getUserId();
         User user = userSession.getUser();
-
+            user = userRepository.findByUserId(userId);
         uiModel.addAttribute("userInfo", user);
 
         return "profile";
